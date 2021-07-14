@@ -1,0 +1,243 @@
+
+
+
+  
+ .navbar{ position:-webkit-sticky;
+    position: sticky;
+    top: 1px;
+    z-index: 100;
+    list-style: none;
+    background-color:rgb(61, 81, 140);
+    text-align:end ;
+    overflow: hidden;
+    width:100%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+  li.nvbar{
+    display: inline;
+    padding:  5px 6px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    
+}
+.nvbar a{
+    font-family: 'Libre Baskerville', serif;
+    padding: 5px;
+    
+    display:inline;
+    color: white;
+    text-decoration: none;
+}
+ .nvbar a:hover {
+
+
+    border-radius: 3px;
+    background-color: white;
+    color: #000;
+  }
+.nvbar img{
+    border-radius: 5px;
+    float: left ;
+    height: 90px;
+    width:100px;
+    padding-bottom: 12px;
+    }
+    
+.hc{
+    
+    margin-right: 50px;
+    padding-top: 0px;
+}
+/*side bar section**/
+  .wrapper{
+    height: 100%;
+    width: 330px;
+    position: relative;
+    
+    
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
+  .wrapper .menu-btn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    height: 50px;
+    width:50px;
+    z-index: 999;
+    color: #f2f2f2;
+    background:#4a4a4a;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 23px;
+    transition: all 0.3s ease;
+
+  }
+  .menu-btn #sd{
+    padding-top: 10px;
+    font-size:30px;
+  }
+  
+  #btn:checked ~ .menu-btn{
+    left: 247px;
+  }
+  #btn:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  .wrapper  #sidebar {
+    position: fixed;
+    height: 40%;
+    width: 270px;
+    background: #404040;
+    overflow: hidden;
+    left: -270px;
+    transition: all 0.3s;
+  }
+  #btn:checked ~ #sidebar{
+
+    left: 0;
+  }
+  
+ .cs{
+   background-color: whitesmoke;
+ }
+  #sidebar .list-items{
+    
+    position: relative;
+    background: #404040;
+    height: 100%;
+    width: 100%;
+    list-style:none ;
+  
+  }
+ 
+  #sidebar .list-items li  {
+    
+    padding-left: 40px;
+    line-height: 50px;
+    border-top: 1px solid rgb(255,255,255,0.1);
+    border-bottom: 1px solid #333;
+    transition: all 0.3s #222 ease;
+  }
+  #sidebar .list-items li :hover {
+    margin-left: 0;
+    border-top: 1px solid    transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 0 10px #222;
+
+  }
+  #sidebar li a{
+    color: #ffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+
+  }
+   #sidebar .list-items li a i{
+    margin-right: 20px;
+     
+  }
+  
+#main{
+    float: left;
+ }
+ h1.maths{
+     text-align: center;
+ }
+ 
+ 
+
+ .trigo{ 
+  font-family: 'PT Serif', serif;
+   text-align: center;
+   color: #122877 ;
+     padding-left: 80px;
+     font-size: 50px;
+     font-weight: 400;
+ }
+ /**---------cards-----------------*/
+ div.cards{
+
+   display: inline-flex;
+   padding-left :200px;
+   
+ }
+ div .card{
+   background-color: #ABD2FA;
+   margin-left: 30px;
+   height: 300px;
+   width: 350px;
+   cursor: pointer;
+ }
+ 
+ 
+  
+.card-heading{
+  color: #0F236B;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  padding-top: 4px;
+  font-weight:bold;
+}
+
+.links{
+  font-family: 'Roboto', sans-serif;
+  margin-left: 120px;
+  width: max-content;
+  padding:8px;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: rgb(27, 114, 228);
+  color: #f2f2f2;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cards  :hover{
+ border: 1px solid #4a4a4a;
+ box-shadow: 4px 4px 4px 4px  #4a4a4a;
+}
+.links:hover{
+  border:none;
+  background-color: white;
+  color:black;
+  box-shadow: none;
+}
+.c2:hover{
+  border:none;
+
+  box-shadow: none;
+}
+/**footer*****/
+footer{
+  background-color: #122877;
+}
+.icons{
+  text-align: center;
+  display: flex;
+  padding-left: 30%;
+}
+#insta {
+  font-size: 150px;
+  color:white;
+}
+#tele{
+  font-size: 150px;
+  color:white;
+}
+#mail{
+  font-size: 150px;
+  color:white;
+}
+.icons a{
+  padding:100px;
+}
