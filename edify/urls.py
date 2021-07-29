@@ -9,6 +9,7 @@ urlpatterns = [
     path('',views.index ,name='index'),
     path("maths",views.courses,name='maths'),
     path("chemistry",views.chemistry,name='chemistry'),
+    path("mathematics",views.maths,name='mathematics'),
     
     
     

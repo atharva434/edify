@@ -1,12 +1,29 @@
-<h1>register</h1>
+{% extends 'todo/main.html' %}
+{% block content %}
+    <link rel = "icon" href = 
+    https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqK2wzlgjd5_omPrgLWKaJJeZqFab85N5xbA&usqp=CAU
+        type = "image/x-icon">
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
 
-<form method="POST">
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label>{{form.username.label}}</label>
+        {{form.username}}
 
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="register">
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
 
 
-</form>
 
-<p>already have an account <a href="{% url 'login' %} ">login</a></p>
+
+{% endblock content %}

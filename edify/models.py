@@ -6,10 +6,14 @@ class Mathamatics(models.Model):
     name:models.CharField(max_length=100)
     topic1=models.CharField(max_length=100)
     link1=models.URLField(max_length=200)
+    channel1=models.CharField(max_length=100)
     link2=models.URLField(max_length=200)
+    channel2=models.CharField(max_length=100)
+    link2=models.URLField(max_length=200)
+    channel3=models.CharField(max_length=100)
     link3=models.URLField(max_length=200)
-    def _str_(self):
-        return self.name + ' | ' + self.topic1  
+    def __str__(self) :
+        return self.topic1 
 
 class Physics(models.Model):
     
@@ -21,8 +25,8 @@ class Physics(models.Model):
     link2=models.URLField(max_length=200)
     channel3=models.CharField(max_length=100)
     link3=models.URLField(max_length=200)
-    def _str_(self):
-        return self.topic1 
+    def __str__(self) :
+        return self.topic1
 
 class Chemistry(models.Model):
     
@@ -34,8 +38,8 @@ class Chemistry(models.Model):
     link2=models.URLField(max_length=200)
     channel3=models.CharField(max_length=100)
     link3=models.URLField(max_length=200)
-    def _str_(self):
-        return self.name + ' | ' + self.topic1    
+    def __str__(self) :
+        return self.topic1   
 
 class Contact(models.Model):
     
@@ -52,4 +56,6 @@ class phyimg() :
 
 class chemimg() :
     img:str    
-                  
+
+class mathimg() :
+    img:str                   

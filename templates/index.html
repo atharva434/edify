@@ -1,24 +1,121 @@
-{% extends 'base.html' %}
-{% block body %}
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="http://source.unsplash.com/1680x600/?mathematics" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css\index.css' %}">
+<title>EDIFY</title>
+</head>
+<body>
+  
+
+<div  class="topnav" id="myTopnav">
+  <div class="limg"><img src="{% static 'images/logo1.jpeg' %}"  alt="logo"></div>
+  <div style="float: right;margin-top: 15px;">
+    <a href="/todo/tasks" target="blank" class="active">Daily Goals</a>
+    <a href="/admin/">Admin page </a>
+    <a href="#contact">Contact</a>
+    <a href="">change course</a>
+  </div>
+  <a href="javascript:void(0);" style="margin-top: 12px;" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<br>
+<br>
+<br>
+<style>
+  
+
+.first {
+    height: 350px;
+    border-radius: 10px;
+    border-radius: 10px;
+    margin-left: 28%;
+}
+</style>
+<div >
+  <img src="{{img1.img}} " alt="##" class="first">
+ 
+  </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  {% for chap in chaps %}
+  <h1 class="trigo">{{chap.topic1}}</h1>
+  <br>
+  <br>
+<div class="cards">
+  <div class="sep" style ="display: inline-block;padding: 10px;">
+<div class="card">
+  <div class="container">
+    <h1 class="card-heading">Links</h1>
+    <br>
+    <h2 style="text-align: center;color: #0F236B;">{{chap.channel1}}</h2>
+    <br>
+    <a href="{{chap.link1}} " target="blank" class="links">Learn now</a>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="container">
+    <h1 class="card-heading">Links</h1>
+    <br>
+    <h2 style="text-align: center;color: #0F236B;">{{chap.channel2}}</h2>
+    <br>
+    <a href="{{chap.link2}}" class="links">Learn now</a>
+  </div>
+</div>
+</div>
+<div class="sep" style ="display: inline-block;padding: 10px;">
+  <div class="card">
+    <div class="container">
+      <h1 class="card-heading">Links</h1>
+      <br>
+      <h2 style="text-align: center;color: #0F236B;">{{chap.channel3}}</h2>
+      <br>
+      <a href="{{chap.link2}}"  class="links">Learn now</a>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+  <br>
+  <div class="card">
+    <div class="container">
+      <h1 class="card-heading"></h1>
+      <br>
+      <h2 style="text-align: center;color: #0F236B;">test coming soon </h2>
+      <br>
+      
+    </div>
+  </div>
+  </div>
 </div>
-{% endblock body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endfor %} 
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>

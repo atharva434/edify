@@ -288,11 +288,7 @@
           <input type="checkbox" id="show-menu">
           <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
           <div class="content">
-          {%if request.user.is_authenticated%}
-          <div class="logo"><a class='button' href="{% url 'logout' %}">LOGOUT</a></div>
-          {% else %}
-          <a href="{% url 'login' %} ">login</a>
-          {% endif %}
+          <div class="logo"><a class='button' href="#">LOGIN</a></div>
             <ul class="links">
               <li><a href="#">MATHS</a></li>
               <li><a href="#">BIOLOGY</a></li>
@@ -317,10 +313,9 @@
               <li><a href="#">COMP-SCI</a></li>
             </ul>
           </div>
-          {% csrf_token %}
           <div class="contai">
            <div class="logo">
-            <a class='button' href="{% url 'task-create' %}">+</a></div>
+            <a class='button' href="#">ADD</a></div>
           </div>
           </form>
         </nav>
@@ -603,42 +598,95 @@ dd {
         </th>
       </tr>
     </thead>
-    {% csrf_token %}
+    
     <tbody>
-    {% for task in object_list%}
       <tr>
         <td data-title='Provider Name'style= "text-align: center;">
-          {{task.subject}}
+          MATHEMATICS
         </td>
           <td data-title='E-mail'style= "text-align: center;">
-           {{task.chapter}}
+           DIFFERENTIATION
         </td>
         <td class='select'style= "text-align: center;">
-          {% if not task.complete %}
-          <a class='button'  href ="{% url 'task' task.id %}">
+          <a class='button' href='#'>
             VIEW
           </a>
-          {% endif %}
-          <a class='button' href="{% url 'task-update' task.id %}">
+          <a class='button' href='#'>
             UPDATE
           </a>
-          {% if task.complete %}
-          <a class='button' href="{% url 'task-delete' task.id  %}">
+          <a class='button' href='#'>
             DELETE
           </a>
-          {% endif %}
         </td>
       </tr>
-    {%empty%}
-    <h3>no items</h3>
-    {%endfor%}
-
+      <tr>
+        <td data-title='Provider Name'style= "text-align: center;">
+          CHEMISTRY
+        </td>
+        <td data-title='E-mail'style= "text-align: center;">
+          ORGANIC CHEMISTRY
+        </td>
+        <td class='select'style= "text-align: center;">
+          <a class='button' href='#'>
+            VIEW
+          </a>
+          <a class='button' href='#'>
+            UPDATE
+          </a>
+          <a class='button' href='#'>
+            DELETE
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td data-title='Provider Name'style= "text-align: center;">
+          PHYSICS
+        </td>
+        <td data-title='E-mail'style= "text-align: center;">
+         RAY & WAVE OPTICS
+        </td>
+        <td class='select'style= "text-align: center;">
+          <a class='button' href='#'>
+            VIEW
+          </a>
+          <a class='button' href='#'>
+            UPDATE 
+          </a>
+          <a class='button' href='#'>
+            DELETE
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td data-title='Provider Name'style= "text-align: center;">
+         BIOLOGY
+        </td>
+        <td data-title='E-mail'style= "text-align: center;">
+          CELL ORGANIZATION
+        </td>
+        <td class='select'style= "text-align: center;">
+          <a class='button' href='#'>
+            VIEW
+          </a>
+          <a class='button' href='#'>
+            UPDATE
+          </a>
+          <a class='button' href='#'>
+            DELETE
+          </a>
+        </td>
+      </tr>
     </tbody>
   </table>
 </main>
 
 
-
+<script>
+  $('.button, .close').on('click', function(e) {
+  e.preventDefault();
+  $('.detail, html, body').toggleClass('open');
+});
+</script>
 
 
 <br>
@@ -652,25 +700,20 @@ dd {
 </style>
 <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
   <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-    <span class="block"> hello {{request.user}}  Ready to Start Learning?</span>
+    <span class="block">Ready to Start Learning?</span>
     <br>
     <span class="block text-black-600">Kick-start your prep right away!!</span>
   </h2>
-
+  <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+    <div class="inline-flex rounded-md shadow">
+      <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+        Home Page
+      </a>
+    </div>
     <div class="ml-3 inline-flex rounded-md shadow">
-      <a href="/maths" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
-        PHYSICS
+      <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+        Course Page
       </a>
-      <a href="/chemistry" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
-        CHEMISTRY
-      </a>
-
-            
-      <a href="/mathematics" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
-        MATHEMATICS
-      </a>
-      
-
     </div>
   </div>
 </div>
