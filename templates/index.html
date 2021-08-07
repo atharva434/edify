@@ -22,7 +22,17 @@
     <a href="/admin/">Admin page </a>
     {% endif %}
     <a href="contact">Contact</a>
-  
+<a href="#" onclick="collectchat.open()">Open Chat</a>
+<script>
+(function(w, d) 
+{ w.CollectId = "60b2575271cedf60ec1a17a4"; 
+var h = d.head || d.getElementsByTagName("head")[0]; 
+var s = d.createElement("script"); 
+s.setAttribute("type", "text/javascript"); 
+s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); 
+h.appendChild(s);
+ })(window, document);
+ </script>
   <a href="{% url 'index' %}#course ">Change Subject</a>
   </div>
   <a href="javascript:void(0);" style="margin-top: 12px;" class="icon" onclick="myFunction()">
