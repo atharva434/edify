@@ -42,12 +42,13 @@ class TaskList(LoginRequiredMixin,ListView):
 
 
 
+
 class TaskDetail(LoginRequiredMixin,DetailView):
     model= Task
 
 class TaskCreate(LoginRequiredMixin,CreateView):
     model=Task
-    fields=['subject','chapter','details','complete']   
+    fields=['sub','chapter','details','complete']   
     success_url=reverse_lazy("tasks")
 
     def form_valid(self, form):
@@ -56,7 +57,7 @@ class TaskCreate(LoginRequiredMixin,CreateView):
 
 class TaskUpdate(LoginRequiredMixin,UpdateView) :
     model=Task
-    fields=['subject','chapter','details','complete']  
+    fields=['sub','chapter','details','complete']  
     success_url=reverse_lazy("tasks")
 
 class DeleteView(LoginRequiredMixin,DeleteView) :

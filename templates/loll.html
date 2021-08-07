@@ -45,7 +45,7 @@
   <!-- header section starts  -->
  
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<body style="background-color: purple"></body>
+<body style="background-color: rgb(22, 49, 133)"></body>
 
 <h1 class = "title">EDIFY</h1>
 
@@ -78,7 +78,7 @@ html {
   
 }
 
-/*-------------Layout-------------*/
+
 body {
   line-height: 1.5em;
   padding: 0;
@@ -87,7 +87,7 @@ body {
 
 
 
-/*-------------Helpers-------------*/
+
 .skew {
   transform: skew(-20deg);
 }
@@ -96,7 +96,7 @@ body {
   transform: skew(20deg);
 }
 
-/*-------------Nav-------------*/
+
 #nav-wrapper {
   overflow: hidden;
   width: 100%;
@@ -173,7 +173,7 @@ h1.logo a, a:active, a:hover, a:visited {
 
 a:link, a:visited, a:active {
   text-decoration: none;
-  color: #f857a8;
+  color:darkblue;
 }
 
 a:hover {
@@ -187,7 +187,7 @@ a:hover {
 }
 
 .btn-nav {
-  color: #f857a8;
+  color:darkblue;
   padding-left: 2em;
   padding-right: 2em;
 }
@@ -258,9 +258,12 @@ a:hover {
 
   <nav id="nav">
     <div class="nav left">
-      
-      <button onclick="document.getElementById('id01').style.display='block'" style="width:auto; font-size:17px; text-align:center;"span class="gradient skew">Login</button>
+       {%if request.user.is_authenticated%}
+      <button style.display='block' style="background-color:rgb(199, 209, 208);height:auto;width:auto;padding:3px 10px;"span class="gradient skew"><a style="text-decoration: none; font-size:x-large;font-weight:bolder;color:darkblue" href="{% url 'logout' %}"> LOGOUT</a> </button>
+      {% else %}
+      <button style.display='block' style="background-color:rgb(199, 209, 208);height:auto;width:auto;padding:3px 10px;"span class="gradient skew"><a style="text-decoration: none; font-size:x-large;font-weight:bolder;color:darkblue" href="/todo/tasks"> JOIN NOW </a> </button>
       <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
+      {% endif %}
     </div>
     <div class="nav right">
       <a href="#home" class="nav-link active" style = "font-size:17px;"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
@@ -383,119 +386,137 @@ $(document).ready(function() {
 
 
 </style>
-<div class="wrapper" >
-  <div class="row">
-    <div class="col">
-      <div class="">
-        <img class="object-cover object-center rounded" style="float:left"  alt="hero" src="https://images.edexlive.com/uploads/user/imagelibrary/2020/5/26/original/ways-online.jpg"align="right"width="500" 
-        height="400">
-      </div> 
-     
-    </div>
-<div class="col">
-  <h1 span class="ribbon-highlight" style="position:relative; right:28%; top: 50%;">
-    The very name of EDIFY meaning "Ed-ucation in a g-IFFY" ; is basically an education-based domain webpage which aims at providing the necessary study materials, all available at the tip of your fingertips.
-  </h1>
-</div>
-
-  </div>
-
-  <div class="row">
-    <div class="col">
-      
-      <h1>Our handmade website is specifically desgined for you to have easy access to all our content so check out all our materials simply starting with login </h1>
-      <img src ="https://www.pngitem.com/pimgs/m/244-2446984_arrow-down-and-right-down-right-arrow-symbol.png" alt= "arrow right  "width="90" 
-      height="60" style = "position:relative; left:180px; top:2px;">  
-    </div>
-    <div class="col">
-      <div class="svg-container">
-        <div class="top left">
-        <svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content">
-          
-          <defs>
-            <marker id="arrow" markerWidth="4" markerHeight="10" viewBox="-2 -4 4 4" refX="0" refY="0" markerUnits="strokeWidth" orient="auto">
-              <polyline points="2,-2 0,0 2,2" stroke="#443c3d" stroke-width="0.75px" fill="none"/>
-            </marker>
-        </defs>
+<div style="margin: 30px;"> 
+<table >
+ <tr>   
+  <tr style="padding-left: 10%;text-align:left;">
+    <td style=" height: 80px;justify-content: center; ">
+      <table>
+        
+      <img  style="width: 400px;height:fit-content;"  alt="hero" src="https://images.edexlive.com/uploads/user/imagelibrary/2020/5/26/original/ways-online.jpg" >
+    </table>
+      </td>
     
-          
-          <g class="box-group">
-            <g transform="translate(-5)">
-              <circle fill="#000" cx="55" cy="50" r="45" opacity="1" />
-              <text x="28" y="58" font-family="Open Sans Condensed" font-size="17" stroke="none" fill="#f5f3e7" font-weight="100" style="text-transform:uppercase; letter-spacing: 1px">Login</text>
-              <line x1="102" x2="135" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
-            </g>
+      <td style="padding:4px;height: 200px;">
+        <h2 style="font-weight: 100;color: white;"><b> A learning system based on formalised teaching
+          but with the help of electronic resources
+           is known as E-learning. While teaching can be based in or out of the classrooms,
+            the use of computers and the Internet forms the major component of E-learning.</b>
+          </h2>
+          <br>
+          <br>
+          <h2 style="color: white;">
+            E-Learning is effective and powerful. It makes information easy to grasp and absorb. 
+            It imparts enhanced ability to learn and implement among the learners. 
+            The Audio-Visuals help in remembering knowledge for a longer time.</h2>
+      </td>
+    </tr>
+  <tr style="padding-left: 10%;height: fit-content;width: 350px;"></tr> 
+    <td ><h2 style="color: white;">Our handmade website is specifically desgined for you to 
+    have easy access to all our content so check out all
+      our materials simply starting with login </h2>
+      <br>
+      <br>
+      <h2 style="color: white;"> In addition to all the content we provide, 
+        we have designed a TO-DO`s list customized as per user requirement,
+         don't forget to check it out !! </h2>
+    </td>
+    
+    <td style="height: fit-content;width:fit-content" >
+
+      <div class="col">
+        <div class="svg-container">
+          <div class="top left">
+          <svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content">
+            
+            <defs>
+              <marker id="arrow" markerWidth="4" markerHeight="10" viewBox="-2 -4 4 4" refX="0" refY="0" markerUnits="strokeWidth" orient="auto">
+                <polyline points="2,-2 0,0 2,2" stroke="#443c3d" stroke-width="0.75px" fill="none"/>
+              </marker>
+          </defs>
+      
+            
+            <g class="box-group">
+              <g transform="translate(-5)">
+                <circle fill="#000" cx="55" cy="50" r="45" opacity="1" />
+                <text x="28" y="58" font-family="Open Sans Condensed" font-size="17" stroke="none" fill="#f5f3e7" font-weight="100" style="text-transform:uppercase; letter-spacing: 1px">Login</text>
+                <line x1="102" x2="135" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
+              </g>
+                
+              <line x1="100" x2="136" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
+        
+              <g transform="translate(136)">
+              <rect fill="#66cc00" x="2" y="25" rx="3" ry="3" width="90" height="50" />
+              <text x="25" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">SELECT
+                <tspan x="26" dy="17">GRADE</tspan>
+              </text>
+              </g>
+        
+              <line x1="230" x2="268" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
               
-            <line x1="100" x2="136" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
-      
-            <g transform="translate(136)">
-            <rect fill="#66cc00" x="2" y="25" rx="3" ry="3" width="90" height="50" />
-            <text x="25" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">SELECT
-              <tspan x="26" dy="17">GRADE</tspan>
-            </text>
-            </g>
-      
-            <line x1="230" x2="268" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
-            
-            <g transform="translate(268)">
-            <rect fill="#66cc00" x="2" y="25" rx="3" ry="3" width="90" height="50" />
-            <text x="26" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">SELECT
-              <tspan x="21" dy="17">SUBJECT</tspan>
-            </text>
-            </g>
-      
-            <line x1="362" x2="400" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
-            
-            <g transform="translate(400)">
-            <rect fill="#66cc00" x="2" y="25" rx="3" ry="3" width="90" height="50" />
-            <text x="25" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">SELECT
-              <tspan x="19" dy="17">CHAPTER</tspan>
-            </text>
-            </g>
-          </g>
-          
-          <line x1="450" x2="450" y1="77" y2="124" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
-          
-          <g class="box-group" transform="translate(0,100)">
-            <g transform="translate(5)">
-            <circle fill="#000" cx="48" cy="50" r="45" opacity="1" />
-            <text x="12" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">LEARN AND
-              <tspan x="24" dy="17">MATURE</tspan>
-            </text>
-            </g>
+              <g transform="translate(268)">
+              <rect fill="#66cc00" x="2" y="25" rx="3" ry="3" width="90" height="50" />
+              <text x="26" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">SELECT
+                <tspan x="21" dy="17">SUBJECT</tspan>
+              </text>
+              </g>
+        
+              <line x1="362" x2="400" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
               
-            <line x1="100" x2="136" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
-      
-            <g transform="translate(136)">
-            <rect fill="#66cc00" x="2" y="25" rx="3" ry="3" width="90" height="50" />
-            <text x="8" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">DIY-QUIZZES
-              <tspan x="21" dy="17">TESTERS</tspan>
-            </text>
+              <g transform="translate(400)">
+              <rect fill="#66cc00" x="2" y="25" rx="3" ry="3" width="90" height="50" />
+              <text x="25" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">SELECT
+                <tspan x="19" dy="17">CHAPTER</tspan>
+              </text>
+              </g>
             </g>
-      
-            <line x1="230" x2="268" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
             
-            <g transform="translate(268)">
-              <rect fill="#66cc00" x="2" y="25" rx="3" ry="3" width="90" height="50" />  
-            <text x="11" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#fff" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">Reference
-              <tspan x="11" dy="17">MATERIALS</tspan>
-            </text>
-            </g>
-      
-            <line x1="362" x2="400" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" marker-start="url(#arrow)"/>
+            <line x1="450" x2="450" y1="77" y2="124" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
             
-            <g transform="translate(400)">
-              <polygon points="60,20 100,40 100,80 60,100 20,80 20,40" fill="#72508d" transform="translate(-12,-10)"/>
-              <rect fill="#72508d" stroke="#72508d" stroke-width="0" x="2" y="25" rx="3" ry="3" width="90" height="50" />
-            <text x="16" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">Choose a
-              <tspan x="29" dy="17">VIDEO</tspan>
-            </text>
-            </g>
-          </g>  
-        </svg>
-      </div>
-      </div>
-      <script>
+            <g class="box-group" transform="translate(0,100)">
+              <g transform="translate(5)">
+              <circle fill="#000" cx="48" cy="50" r="45" opacity="1" />
+              <text x="12" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">LEARN AND
+                <tspan x="24" dy="17">MATURE</tspan>
+              </text>
+              </g>
+                
+              <line x1="100" x2="136" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
+        
+              <g transform="translate(136)">
+              <rect fill="#66cc00" x="2" y="25" rx="3" ry="3" width="90" height="50" />
+              <text x="8" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">DIY-QUIZZES
+                <tspan x="21" dy="17">TESTERS</tspan>
+              </text>
+              </g>
+        
+              <line x1="230" x2="268" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" />
+              
+              <g transform="translate(268)">
+                <rect fill="#66cc00" x="2" y="25" rx="3" ry="3" width="90" height="50" />  
+              <text x="11" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#fff" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">Reference
+                <tspan x="11" dy="17">MATERIALS</tspan>
+              </text>
+              </g>
+        
+              <line x1="362" x2="400" y1="50" y2="50" stroke-width="2" stroke="#443c3d" stroke-dasharray="2,1" marker-start="url(#arrow)"/>
+              
+              <g transform="translate(400)">
+                <polygon points="60,20 100,40 100,80 60,100 20,80 20,40" fill="#72508d" transform="translate(-12,-10)"/>
+                <rect fill="#72508d" stroke="#72508d" stroke-width="0" x="2" y="25" rx="3" ry="3" width="90" height="50" />
+              <text x="16" y="47" font-family="Open Sans Condensed" font-size="10" stroke="none" fill="#f5f3e7" font-weight="900" style="text-transform:uppercase; letter-spacing: 1px">Choose a
+                <tspan x="29" dy="17">VIDEO</tspan>
+              </text>
+              </g>
+            </g>  
+          </svg>
+        </div>
+        </div>
+    </td>
+  </tr>
+</table>
+</div>
+<script>
         var svg = document.getElementsByTagName("svg");
     
     var rect = document.getElementsByTagName("rect");
@@ -694,15 +715,16 @@ window.onclick = function(event) {
 <!-- home section ends -->
 
 <!-- course section starts  -->
-
+<div style="background-color: #D8EAFD;">
 <section id="course">
 
-<h1 class="heading"style="font-size: 50px;">Our latest courses</h1>
-<h2 style="font-size: 30px;">"Better three hours too soon than a minute too late." – (all time great) William Shakespeare</h2>
+<h1 class="heading"style="font-size: 50px;color:rgb(22, 49, 133);">Our latest courses</h1>
+<h2 style="font-size: 30px;">"Better three hours too soon than a minute too late." 
+  – (all time great) William Shakespeare</h2>
 
 <div class="box-container">
 
-  <div class="box" data-aos="flip-up;"style="background-color:orange">
+  <div class="box" data-aos="flip-up;"style="background-color:rgb(22, 49, 133)">
     <style>
       img {
         display: block;
@@ -715,116 +737,116 @@ window.onclick = function(event) {
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="https://byjus.com/"style="color:black;" target=_blank><b>Maths</b></a>
+      </span><a href="https://byjus.com/"style="color:white;" target=_blank><b>Maths</b></a>
     </p>
     <p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Science</b></a>
+      </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Science</b></a>
     </p>
     <p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Social Science</b></a>
+      </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Social Science</b></a>
     </p>
     
   </div>
   <!--class 10-->
 
-  <div class="box" data-aos="flip-down"style="background-color:orange">
+  <div class="box" data-aos="flip-down"style="background-color:rgb(22, 49, 133)">
     
     <img src="https://igsmaths.org/wp-content/uploads/2019/11/Grade-10.jpg" alt=""class="center">
     <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-400 rounded-full flex-shrink-0">
       <path d="M20 6L9 17l-5-5"></path>
     </svg>
-  </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Maths</b></a>
+  </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Maths</b></a>
 </p>
 <p class="flex items-center text-gray-200 mb-2">
   <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
       <path d="M20 6L9 17l-5-5"></path>
     </svg>
-  </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Science</b></a>
+  </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Science</b></a>
 </p>
 <p class="flex items-center text-gray-200 mb-2">
   <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
       <path d="M20 6L9 17l-5-5"></path>
     </svg>
-  </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Social Science</b></a>
+  </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Social Science</b></a>
 </p>
 <p class="flex items-center text-gray-200 mb-2">
   <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
       <path d="M20 6L9 17l-5-5"></path>
     </svg>
-  </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Computer Science</b></a>
+  </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Computer Science</b></a>
 </p>
   </div>
 
-  <div class="box" data-aos="flip-left"style="background-color:orange">
+  <div class="box" data-aos="flip-left"style="background-color:rgb(22, 49, 133)">
     <img src="https://igsmaths.org/wp-content/uploads/2019/11/Grade-11.jpg" alt="grade 11">
     <p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Maths</b></a>
+      </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Maths</b></a>
     </p>
     <p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Physics</b></a>
+      </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Physics</b></a>
     </p>
     <p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Chemistry</b></a>
+      </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Chemistry</b></a>
     </p>
     <p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Biology</b></a>
+      </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Biology</b></a>
     </p><p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Computer Science</b></a>
+      </span><a href="https://byjus.com/"style="color:white;"target=_blank><b>Computer Science</b></a>
     </p>
    
   </div>
 
-  <div class="box" data-aos="flip-right"style="background-color:orange">
+  <div class="box" data-aos="flip-right"style="background-color:rgb(22, 49, 133)">
     <img src="data:image/png;base64,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" alt="">
     <p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="/mathematics"style="color:black;"target=_blank><b>Maths</b></a>
+      </span><a href="/mathematics"style="text-decoration:none;color:white"target=_blank><b>Maths</b></a>
     </p>
     <p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="/maths"style="color:black;"target=_blank><b>Physics</b></a>
+      </span><a href="/maths"style="text-decoration:none;color:white"target=_blank><b>Physics</b></a>
     </p>
     <p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="/chemistry"style="color:black;"target=_blank><b>Chemistry</b></a>
+      </span><a href="/chemistry"style="text-decoration:none;color:white"target=_blank><b>Chemistry</b></a>
     </p>
     <p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Biology</b></a>
+      </span><a href="https://byjus.com/"style="text-decoration:none;color:white"target=_blank><b>Biology</b></a>
     </p><p class="flex items-center text-gray-200 mb-2">
       <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-800 text-gray-200 rounded-full flex-shrink-0">
           <path d="M20 6L9 17l-5-5"></path>
         </svg>
-      </span><a href="https://byjus.com/"style="color:black;"target=_blank><b>Computer Science</b></a>
+      </span><a href="https://byjus.com/"style="text-decoration:none;color:white"target=_blank><b>Computer Science</b></a>
     </p>
     
   </div>
@@ -833,7 +855,7 @@ window.onclick = function(event) {
 </div>
 
 </section>
-
+</div>
 <!-- course section ends -->
 
 
@@ -879,7 +901,7 @@ window.onclick = function(event) {
 <!-- service section ends -->
 
 <!-- testimonials section starts  -->
-
+<div style="background-color:rgb(22, 49, 133)">
 <section id="testimonial">
 
 <h1 class="heading">what gives us the edge?</h1>
@@ -943,51 +965,11 @@ window.onclick = function(event) {
 </div>
 
 </section>
-
+</div>
 <!-- testimonials section ends -->
 
-<!-- contact section starts  -->
-
-<section id="contact" class="container-fluid">
-
-<h1 class="heading">get in touch</h1>
-
-<div class="row min-vh-75 align-items-center min-vw-100">
-
-<div class="col-lg-5 col-md-8  mx-auto">
- 
-<form action="" data-aos="zoom-in">
-
-  <div class="inputBox">
-    <input type="text" required>
-      <h3>full name</h3>
-  </div>
-
-  <div class="inputBox">
-    <input type="email" required>
-      <h3>e-mail</h3>
-  </div>
-
-  <div class="inputBox">
-    <input type="number" required>    
-      <h3>phone</h3>
-  </div>
-
-  <div class="inputBox">
-    <textarea name="" id="" cols="30" rows="10" required></textarea>
-    <h3>message</h3>
-  </div>
-
-  <div class="inputBox">
-    <input type="submit">
-  </div>
-
-</form>
-
-</div>
 
 
-<!-- contact section ends -->
 <!--#social media buttons-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -1056,13 +1038,14 @@ window.onclick = function(event) {
 
 
 <!-- Add font awesome icons -->
+<div style="text-align: center;">
 <a href="#" class="fa fa-facebook"></a>
 <a href="#" class="fa fa-twitter"></a>
 <a href="#" class="fa fa-google"></a>
 <a href="#" class="fa fa-linkedin"></a>
 <a href="#" class="fa fa-youtube"></a>
 <a href="#" class="fa fa-instagram"></a>
-
+</div>
       
 
 <!-- footer section starts  -->

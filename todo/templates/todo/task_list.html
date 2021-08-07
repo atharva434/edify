@@ -31,27 +31,21 @@
         .title {
         
         font-size: 120px;
-        color: #fff;
+        color: rgb(61, 81, 140);
         text-align: center;
         min-height: 160px;
         animation: glow 1s ease-in-out infinite alternate;
         
       }
       
-      @-webkit-keyframes glow {
-        from {
-          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-        }
-        
-        to {
-          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-        }
-      }
+      
+
+      
       </style>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <body style="background-color: rgb(34, 154, 175)"></body>
+      <body style="background-color:#D8EAFD"></body>
       
-      <h1 class = "title">EDIFY</h1>
+      <h1 class = "title"><b>EDIFY</b></h1>
 
       <!--navbar style-->
       <style>
@@ -64,7 +58,7 @@
       font-family: 'Poppins', sans-serif;
     }
     .wrapper{
-      background: #171c24;
+      background: rgb(61, 81, 140);
       position: fixed;
       width: 100%;
     }
@@ -282,6 +276,9 @@
     
     </style>
     <!--navbar-->
+    <style>
+      .logo a:hover {background-color: rgb(14, 119, 93);}
+    </style>
     <div class="wrapper">
         <nav>
           <input type="checkbox" id="show-search">
@@ -289,7 +286,7 @@
           <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
           <div class="content">
           {%if request.user.is_authenticated%}
-          <div class="logo"><a class='button' href="{% url 'logout' %}">LOGOUT</a></div>
+          <div  class="logo"><a style="text-decoration: none;"class='button' href="{% url 'logout' %}">LOGOUT</a></div>
           {% else %}
           <a href="{% url 'login' %} ">login</a>
           {% endif %}
@@ -317,10 +314,15 @@
               <li><a href="#">COMP-SCI</a></li>
             </ul>
           </div>
+          <style>
+            .contai a:hover {background-color: rgb(14, 119, 93);}
+          </style>
+          
           {% csrf_token %}
+          
           <div class="contai">
            <div class="logo">
-            <a class='button' href="{% url 'task-create' %}">+</a></div>
+            <a style="text-decoration: none;" class='button' href="{% url 'task-create' %} ">+ ADD TASK</a></div>
           </div>
           </form>
         </nav>
@@ -360,7 +362,7 @@ html {
 
 body {
   padding: 0px;
-  background-color: #5BB9B8;
+  background-color: #D8EAFD;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   color: #fff;
@@ -374,7 +376,7 @@ p {
 }
 
 main {
-  background-color: rgb(34, 154, 175);
+  background-color: #D8EAFD;
 }
 
 h1 {
@@ -445,6 +447,7 @@ tfoot th {
   color: #fff;
   padding: 8px;
   background-color: #4b908f;
+  
 }
 
 .select {
@@ -588,6 +591,8 @@ dd {
 }
 
 </style>
+
+
 <main>
   <table>
     <thead>
@@ -608,22 +613,22 @@ dd {
     {% for task in object_list%}
       <tr>
         <td data-title='Provider Name'style= "text-align: center;">
-          {{task.subject}}
+          {{task.sub}}
         </td>
           <td data-title='E-mail'style= "text-align: center;">
            {{task.chapter}}
         </td>
         <td class='select'style= "text-align: center;">
           {% if not task.complete %}
-          <a class='button'  href ="{% url 'task' task.id %}">
+          <a style="text-decoration: none ;" onMouseOver="this.style.color='white'"onMouseOut="this.style.color='white'" class='button' href ="{% url 'task' task.id %}">
             VIEW
           </a>
           {% endif %}
-          <a class='button' href="{% url 'task-update' task.id %}">
+          <a style="text-decoration: none;"onMouseOver="this.style.color='white'"onMouseOut="this.style.color='white'"class='button' href="{% url 'task-update' task.id %}">
             UPDATE
           </a>
           {% if task.complete %}
-          <a class='button' href="{% url 'task-delete' task.id  %}">
+          <a style="text-decoration: none;"onMouseOver="this.style.color='white'"onMouseOut="this.style.color='white'"class='button' href="{% url 'task-delete' task.id  %}">
             DELETE
           </a>
           {% endif %}
@@ -636,8 +641,9 @@ dd {
     </tbody>
   </table>
 </main>
-
-
+<style>
+  .select a:hover {background-color: rgb(14, 119, 93);}
+</style>
 
 
 
@@ -645,7 +651,7 @@ dd {
 
 <style>
   .block{
-    background-color: rgb(214, 176, 141);
+    background-color: #D8EAFD;
   color: black;
   }
 
@@ -658,7 +664,7 @@ dd {
   </h2>
 
     <div class="ml-3 inline-flex rounded-md shadow">
-      <a href="/maths" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+      <a href="/maths" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50" style= "display: block;">
         PHYSICS
       </a>
       <a href="/chemistry" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">

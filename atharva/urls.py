@@ -20,4 +20,5 @@ urlpatterns = [
     path('',include("edify.urls")),
     path('admin/', admin.site.urls),
     path('todo',include("todo.urls")),
+    
 ]
