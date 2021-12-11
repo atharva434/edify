@@ -1,0 +1,1 @@
+web: gunicorn atharva.wsgi --log-file -
